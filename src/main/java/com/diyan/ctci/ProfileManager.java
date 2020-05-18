@@ -7,8 +7,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ProfileManager {
-    @Autowired
-    private Environment env;
+    private final Environment env;
+
+    public ProfileManager(Environment env) {
+        this.env = env;
+    }
 
     @GetMapping("envdetails")
     public String envDetails(){
