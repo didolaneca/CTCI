@@ -8,7 +8,7 @@ public class IsUnique {
      * @return true if the string contains all unique characters and false otherwise.
      */
     public boolean isUniqueChars(String string) {
-        boolean[] checks = new boolean[250];
+        boolean[] checks = new boolean[256];
         for (int i = 0; i < string.length(); i++) {
             int index = string.charAt(i);
             if (checks[index]) {
@@ -20,6 +20,7 @@ public class IsUnique {
     }
 
     /**
+     * Note: This implementation will work only for alphabet characters
      * Different implementation of {@link #isUniqueChars(String)}
      * @param string the string we want to determine if contains all unique characters
      * @return true if the string contains all unique characters and false otherwise.

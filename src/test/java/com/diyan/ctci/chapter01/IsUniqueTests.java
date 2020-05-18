@@ -27,4 +27,15 @@ public class IsUniqueTests {
         Assertions.assertFalse(result1);
         Assertions.assertFalse(result2);
     }
+
+    @Test
+    void IsUniqueCharsBitPositiveTest(){
+        IsUnique isUnique = new IsUnique();
+        boolean result = isUnique.isUniqueCharsBit("asdfghjklzxcvbnm");
+        boolean result1 = isUnique.isUniqueCharsBit("qwertyuiop");
+        boolean result2 = isUnique.isUniqueCharsBit("zxAcUYTRvbnm");
+        Assertions.assertTrue(result);
+        Assertions.assertTrue(result1);
+        Assertions.assertTrue(result2);
+    }
 }
