@@ -2,8 +2,6 @@ package com.diyan.ctci.chapter01;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Assertions.*;
-import org.springframework.util.Assert;
 
 public class IsUniqueTests {
     @Test
