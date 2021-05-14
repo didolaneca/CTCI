@@ -33,4 +33,31 @@ public class Permutation {
         }
         return true;
     }
+
+    /**
+     * Given an array and its length, and you must print out all the permutations of the array.
+     */
+    public static void permutation(char[] arr, int length){
+        if(length == 1){
+            System.out.println(arr);
+        } else {
+            for(int i = 0; i < length; i++){
+                swap(arr, i, length - 1);
+                permutation(arr, length - 1);
+                swap(arr, i, length - 1);
+            }
+        }
+    }
+
+    public static void swap(char[] arr, int i, int j){
+        char c = arr[i];
+        arr[i] = arr[j];
+        arr[j] = c;
+
+    }
+
+    public static void main(String[] args) {
+        char[] input = {'a', 'b', 'c'};
+        permutation(input, input.length);
+    }
 }
