@@ -2,6 +2,14 @@ package com.diyan.leetcode;
 
 public class minCostClimbingStairs {
 
+    public static void main(String[] args) {
+        // int[] testOne = { 1, 100, 1, 1, 1, 100, 1, 1, 100, 1 };
+        // System.out.println(minCostClimbingStairsSolution(testOne));
+
+        int[] testTwo = { 10, 15, 20 };
+        System.out.println(minCostClimbingStairsSolution(testTwo));
+    }
+
     /**
      * You are given an integer array cost where cost[i] is the cost of ith step on
      * a staircase. Once you pay the cost, you can either climb one or two steps.
@@ -42,9 +50,15 @@ public class minCostClimbingStairs {
      * @return
      */
 
-    public int minCostClimbingStairsSolution(int[] cost) {
+    public static int minCostClimbingStairsSolution(int[] cost) {
+        int step1 = 0, step2 = 0;
+        for (int i = cost.length - 1; i >= 0; i--) {
+            int currentStep = cost[i] + Math.min(step1, step2);
+            step1 = step2;
+            step2 = currentStep;
+        }
 
-        return 0;
+        return Math.min(step1, step2);
     }
 
 }
